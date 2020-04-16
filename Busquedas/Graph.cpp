@@ -18,9 +18,8 @@
 #define ll long long
 #define INF 1e9
 #define forall(it,v) for(auto it = v.begin(); it!=v.end(); ++it) 
-#define MAX 250001
 #define sze(x) (int)x.size()
-#define forall(it,v) for(auto it=v.begin();it!=v.end();++it)
+
 
 
 using namespace std;
@@ -140,7 +139,7 @@ inline double h(Node* a, Node* b) {
 }
 
 
-int n_nodes = 5;
+int n_nodes = 100;
 map<int, bool> eliminated_node;
 Graph G(n_nodes);
 vector<int> pat(n_nodes * n_nodes, -1);
