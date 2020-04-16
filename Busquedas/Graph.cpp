@@ -171,15 +171,7 @@ ll dijkstra(int being, int end) {
  //               cout << "\n---------------------------------------------------\n";
             }
     }
-    /*
-    cout << "\n Dad : ";
-    for (short i = 0; i < dad.size(); ++i) {
-        cout << "\n" << dad[i];
-    }
-    */
     pat = dad;
-
-
     finalpath = end;
     if (dist[end] < INF) {
         for (short i = end; i != -1; i = dad[i]) {
@@ -270,37 +262,26 @@ void OnMouseClick(int button, int state, int x, int y)
 {
     if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
     {
-        //convertir x,y 
-        //insertar un nuevo punto en el quadtree
+        //convertir x,y
     }
 }
 
-void OnMouseMotion(int x, int y)
-{
-    //opcional 
-    //hacer algo x,z cuando se mueve el mouse
-}
-
+void OnMouseMotion(int x, int y){ //opcional
+} 
 
 void glPaint(void) {
-    //El fondo de la escena al color initial
-    glClear(GL_COLOR_BUFFER_BIT); //CAMBIO
+    glClear(GL_COLOR_BUFFER_BIT); 
     glLoadIdentity();
     glPushMatrix(); // save the current matrix
     glScalef(30, 30, 30); // scale the matrix
     glOrtho(-300.0f, 300.0f, -300.0f, 300.0f, -1.0f, 1.0f);
-    //dibujar quadTree (qt->draw())
-
-    //dibuja el gizmo
     displayGizmo();
     glPopMatrix(); // load the unscaled matrix
-    //doble buffer, mantener esta instruccion al fin de la funcion
     glutSwapBuffers();
 }
 
 
 void init_GL(void) {
-    //Color del fondo de la escena
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f); //(R, G, B, transparencia) en este caso un fondo negro
 
     //modo projeccion
@@ -341,7 +322,7 @@ int main(int argc, char** argv)
     int n2;
     cout << "\n Ingrese el nodo final : ";
     cin >> n2;
-    int block = n_nodes*0.20;
+    int block = (n_nodes*n_nodes)*0.20;
     cout << "\n block = " << block;
     int random = 0;
     srand(time(NULL));
@@ -357,9 +338,9 @@ int main(int argc, char** argv)
         printf("%d%c", i, (i == 2 ? '\n' : ' '));
     cout << "Se termino exitosamente\n";
 
-
+    ///Busquedas
     dijkstra(n1, n2);
- //   dfs(n1, n2);
+    dfs(n1, n2);
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(600, 600);
