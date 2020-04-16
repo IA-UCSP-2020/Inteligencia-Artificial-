@@ -1,0 +1,9 @@
+Explicacion rapida:
+
+En el archivo Graph.h se implementaron los algoritmos de busqueda:
+  -Dijkstra
+  -
+  -
+  
+ Ademas se implemento una interfaz visual utilizando la libreria [Nombre de la Libreria] en la que se resaltan los nodos bloqueados y 
+ su posicion en la matriz ademas del camino mas optimo.
