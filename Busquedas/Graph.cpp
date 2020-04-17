@@ -30,12 +30,10 @@ public:
     int x;
     int y;
     vector<pair<int, Node*>> nei;
-    vector<ii> neiS;
     map<int, bool> indices;
     void addneigh(int weitgh, Node* n2) {
         if (indices[n2->id]) return;
         nei.push_back({weitgh,n2 });
-        neiS.push_back({ weitgh,n2->id });
         indices[n2->id] = true;
     }
 };
